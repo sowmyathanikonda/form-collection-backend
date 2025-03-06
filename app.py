@@ -80,4 +80,5 @@ def submit_form():
 
 if __name__ == '__main__':
     create_table()  # Ensure the table exists
-    app.run(host='0.0.0.0', port=5000, debug=True)  # Allow public access
+    port = int(os.getenv("PORT", 10000))  # Render provides PORT dynamically
+    app.run(host='0.0.0.0', port=port, debug=True)
